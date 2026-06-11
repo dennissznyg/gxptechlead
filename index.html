@@ -8,17 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:   #0D2B45;
-      --steel:  #1E5F8C;
-      --ice:    #F4F8FB;
+      --navy:   #2E3A6E;
+      --steel:  #1E88C7;
+      --ice:    #F4F9FC;
       --slate:  #4A5568;
       --rule:   #CBD5E0;
       --white:  #FFFFFF;
-      --light-blue: #C8D8E8;
+      --light-blue: #5BC8E8;
     }
 
     html { scroll-behavior: smooth; }
@@ -48,11 +49,19 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-weight: 800;
       font-size: 1.1rem;
       color: var(--navy);
       letter-spacing: -0.02em;
       text-decoration: none;
+    }
+
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
     }
 
     .nav-logo span { color: var(--steel); }
@@ -636,7 +645,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">GxP <span>TechLead</span></a>
+  <a href="#hero" class="nav-logo"><img src="assets/logo.png" alt="GxP TechLead logo" class="nav-logo-img" />GxP <span>TechLead</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
