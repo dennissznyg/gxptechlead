@@ -1035,9 +1035,13 @@
       dots[current].classList.add('active');
     }
 
-    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+    let timer = setInterval(() => show((current + 1) % slides.length), 7000);
 
-    setInterval(() => show((current + 1) % slides.length), 7000);
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {
+      show(i);
+      clearInterval(timer);
+      timer = setInterval(() => show((current + 1) % slides.length), 7000);
+    }));
   })();
 </script>
 </body>
