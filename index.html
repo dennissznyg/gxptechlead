@@ -427,6 +427,80 @@
       line-height: 1.5;
     }
 
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      padding: 90px 5%;
+      background: var(--ice);
+    }
+
+    .testimonial-carousel {
+      max-width: 760px;
+      margin: 3rem auto 0;
+      position: relative;
+      min-height: 220px;
+    }
+
+    .testimonial-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-slide.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+
+    .testimonial-quote {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-quote::before { content: '\201C'; }
+    .testimonial-quote::after { content: '\201D'; }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--steel);
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--slate);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--rule);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s;
+    }
+
+    .testimonial-dot.active { background: var(--steel); }
+
     /* ── CLIENTS / LOGOS ── */
     #background {
       padding: 80px 5%;
@@ -784,28 +858,12 @@
         <div class="result-context">Active users driven to a corporate analytics platform through product ownership, change management, and community building</div>
       </div>
       <div class="result-card">
-        <div class="result-number">80</div>
-        <div class="result-context">Production lines brought into global Statistical Process Control compliance in relation to Annex 1 requirements</div>
-      </div>
-      <div class="result-card">
         <div class="result-number">60k+</div>
         <div class="result-context">OT data tags from production equipment connected, harmonised, and delivered into a cloud data pipeline</div>
       </div>
       <div class="result-card">
-        <div class="result-number">18</div>
-        <div class="result-context">Production lines with alarm data pipelines architected and implemented, enabling real-time operational visibility</div>
-      </div>
-      <div class="result-card">
-        <div class="result-number">27</div>
-        <div class="result-context">Vendors assessed in a global Predictive Maintenance RfP — from market mapping through to shortlist recommendation</div>
-      </div>
-      <div class="result-card">
         <div class="result-number">7</div>
         <div class="result-context">Countries coordinated across a single IT/OT programme introducing Deep Learning, Digital Twin, and Computer Vision</div>
-      </div>
-      <div class="result-card">
-        <div class="result-number">4×</div>
-        <div class="result-context">CEO Awards received for customer satisfaction, innovation, and creative thinking — NNE</div>
       </div>
     </div>
   </div>
@@ -869,6 +927,68 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">What people say</div>
+      <h2 class="section-title">Recommendations from colleagues and clients</h2>
+    </div>
+    <div class="testimonial-carousel">
+      <div class="testimonial-slide active">
+        <p class="testimonial-quote">Some of the steps taken on that journey would have been very different steps if Dennis had not been available to us — the steps would have been smaller, and we would not have come nearly as far.</p>
+        <div class="testimonial-author">Bjarne Jessen</div>
+        <div class="testimonial-role">Data Engineer, Novo Nordisk</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">Dennis is one of the best PMs that I have worked with in my career.</p>
+        <div class="testimonial-author">André Santiles</div>
+        <div class="testimonial-role">PMO Manager, Progen</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">His ability to deliver solutions ahead of standard timelines was impressive and greatly contributed to the project's success.</p>
+        <div class="testimonial-author">Nicola Zanoni</div>
+        <div class="testimonial-role">Head of Operations, Da Lio S.p.A.</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">Bridging the gap between technology and business — I give him great recommendations.</p>
+        <div class="testimonial-author">Anders Ottosen</div>
+        <div class="testimonial-role">IT/OT Account Manager, Siemens</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">His point of view to complex and new technology was stellar, and he was always ready to go the extra steps to secure quality and integrity.</p>
+        <div class="testimonial-author">Kasper Malthe Larsen</div>
+        <div class="testimonial-role">Director & OT CTO, LEGO</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">Technical curiosity, business acumen in the OT space, and work ethic.</p>
+        <div class="testimonial-author">Vince Martin</div>
+        <div class="testimonial-role">Global Account Strategist, Microsoft</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">End-to-end responsibility and ensures that the job gets done — both on internal projects and with external suppliers.</p>
+        <div class="testimonial-author">Kristian Berg Thomsen</div>
+        <div class="testimonial-role">Senior Management Consultant, Implement Consulting Group</div>
+      </div>
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">His technical expertise allows him to see the big picture and effectively translate technology into business value.</p>
+        <div class="testimonial-author">Josephine Skov Villefrance</div>
+        <div class="testimonial-role">Senior Manufacturing Intelligence Engineer, Novo Nordisk</div>
+      </div>
+      <div class="testimonial-dots">
+        <button class="testimonial-dot active" aria-label="Testimonial 1"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 2"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 3"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 4"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 5"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 6"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 7"></button>
+        <button class="testimonial-dot" aria-label="Testimonial 8"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
@@ -889,9 +1009,30 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 GxP TechLead · Dennis Nygaard</p>
+  <p>© <span id="copyright-year"></span> GxP TechLead · Dennis Nygaard</p>
   <a href="https://linkedin.com/in/dennisnygaard" target="_blank" rel="noopener">linkedin.com/in/dennisnygaard</a>
 </footer>
 
+<script>
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+  (function () {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    let current = 0;
+
+    function show(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+
+    setInterval(() => show((current + 1) % slides.length), 7000);
+  })();
+</script>
 </body>
 </html>
