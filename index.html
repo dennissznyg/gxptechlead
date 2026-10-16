@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GxP TechLead – Dennis Nygaard</title>
   <meta name="description" content="IT/OT Digital Transformation Leader and GxP Technology Consultant. Helping life science and industrial organizations implement technology that works." />
+  <link rel="canonical" href="https://gxptechlead.dk/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gxptechlead.dk/" />
+  <meta property="og:site_name" content="GxP TechLead" />
+  <meta property="og:title" content="GxP TechLead – Dennis Nygaard" />
+  <meta property="og:description" content="IT/OT Digital Transformation Leader and GxP Technology Consultant. Helping life science and industrial organizations implement technology that works." />
+  <meta property="og:image" content="https://gxptechlead.dk/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="GxP TechLead – Technology that works, in regulated environments" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:alt" content="GxP TechLead – Technology that works, in regulated environments" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GxP TechLead",
+    "url": "https://gxptechlead.dk/",
+    "logo": "https://gxptechlead.dk/assets/logo.png",
+    "image": "https://gxptechlead.dk/assets/og-image.png",
+    "description": "IT/OT digital transformation, program management and GxP technology advisory for life science and industrial organizations.",
+    "email": "dnyg@gxptechlead.dk",
+    "vatID": "DK44985764",
+    "sameAs": ["https://linkedin.com/in/dennisnygaard"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Kongens Lyngby", "addressCountry": "DK" },
+    "founder": {
+      "@type": "Person",
+      "name": "Dennis Nygaard",
+      "sameAs": ["https://linkedin.com/in/dennisnygaard"]
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -22,7 +56,7 @@
       --light-blue: #5BC8E8;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -91,6 +125,28 @@
     }
 
     .nav-cta:hover { background: var(--steel) !important; color: var(--white) !important; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.65rem;
+      margin-right: -0.65rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      margin: 5px 0;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── HERO ── */
     #hero {
@@ -702,7 +758,20 @@
       .services-grid { grid-template-columns: 1fr; }
       .results-grid { grid-template-columns: repeat(2, 1fr); }
       .background-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 5% 1.25rem;
+        background: var(--white);
+        border-bottom: 1px solid var(--rule);
+      }
+      nav.open .nav-links { display: flex; }
+      .nav-links a { display: block; padding: 0.75rem 0; font-size: 1rem; }
+      .nav-links .nav-cta { display: inline-block; margin-top: 0.5rem; padding: 0.6rem 1.25rem; }
     }
 
     @media (max-width: 600px) {
@@ -711,7 +780,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       .pulse-line, .pulse-line-active { animation: none; stroke-dashoffset: 0; }
+      .nav-toggle span { transition: none; }
     }
   </style>
 </head>
@@ -720,7 +791,8 @@
 <!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo"><img src="assets/logo.png" alt="GxP TechLead logo" class="nav-logo-img" />GxP <span>TechLead</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#results">Results</a></li>
@@ -764,7 +836,7 @@
         I build the connection between production floors and enterprise IT — translating complex IT/OT challenges into measurable improvements in efficiency, compliance, and reliability.
       </p>
       <p>
-        With 8+ years inside pharmaceutical manufacturing at Novo Nordisk and NNE, I have led the full spectrum: from architecting OT cloud pipelines and deploying predictive maintenance across global production lines, to managing large-scale programs with 100+ stakeholders across 7 countries.
+        With 8+ years in pharmaceutical manufacturing technology — six of them inside Novo Nordisk and NNE — I have led the full spectrum: from architecting OT cloud pipelines and deploying predictive maintenance across global production lines, to managing large-scale programs with 100+ stakeholders across 7 countries.
       </p>
       <p>
         I operate credibly with engineers on the shop floor and executives in the boardroom — because I have been both.
@@ -1022,6 +1094,22 @@
 
 <script>
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+  (function () {
+    const nav = document.querySelector('nav');
+    const toggle = document.querySelector('.nav-toggle');
+
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    }
+
+    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); toggle.focus(); }
+    });
+  })();
 
   (function () {
     const slides = document.querySelectorAll('.testimonial-slide');
